@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Account Summary">
+        <div class="slds-m-around_medium">
+            <template if:true={isEdit}>
+                <lightning-textarea label="Edit Summary" value={summary} onchange={handleOnchange}></lightning-textarea>
+                <div class="slds-m-top_medium">
+                    <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+                    <lightning-button variant="neutral" label="Discard" onclick={handleDiscard} class="slds-m-left_small"></lightning-button>
+                </div>
+            </template>
+        <template if:false={isEdit}>
+            <p class="slds-text-heading_medium">{summary}</p>
+            <br></br>
+                <lightning-button variant="brand" label="Edit" onclick={handleEdit}></lightning-button>
+                <lightning-button variant="success" label="Generate Summary" onclick={handleGenerate} class="slds-m-left_small"></lightning-button>
+                <lightning-button style="margin-left: 10px" variant="success" label="Generate AI" onclick={generateAISummary} class="slds-m-left_small"></lightning-button>
+        </template>
+        </div>
+    </lightning-card>
+</template>

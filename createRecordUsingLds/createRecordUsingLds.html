@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="View and Create Record Using LDS" icon-name="account_info">
+    <div class="slds-m-around_medium">
+<!-- This component only works on the record pages. As it fetches the record data from @api recordId. -->
+        <!-- Viewing the Record -->
+        <lightning-record-view-form object-api-name="Account" record-id={recordId}>
+            <lightning-output-field field-name="Name"></lightning-output-field>
+            <lightning-output-field field-name="Phone"></lightning-output-field>
+            <lightning-output-field field-name="Industry"></lightning-output-field>
+        </lightning-record-view-form>
+
+        <!-- Edit Button -->
+        <lightning-button variant="success" label="Edit" title="Successful action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        
+        <!-- Editing the Record -->
+        <template if:true={handleEdit}>
+            <lightning-record-edit-form object-api-name="Account" record-id={recordId} onsuccess={handleSuccess}>
+                <lightning-input-field field-name="Name"></lightning-input-field>
+                <lightning-input-field field-name="Phone"></lightning-input-field>
+                <lightning-input-field field-name="Industry"></lightning-input-field>
+                <div class="slds-var-m-top_medium">
+                    <lightning-button variant="brand" type="submit" label="Save"></lightning-button>
+                    <lightning-button variant="neutral" label="Cancel" onclick={HandleCancel}></lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </template>
+    </div>
+    </lightning-card>
+</template>

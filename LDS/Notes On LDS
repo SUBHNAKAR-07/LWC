@@ -1,0 +1,7 @@
+Summary of LDS Components and Modules
+Category	Components/Modules
+Wire Adapters	getRecord, getObjectInfo, getPicklistValues, getRecordUi
+Functions	createRecord, updateRecord, deleteRecord, generateRecordInputForCreate/Update
+Components	lightning-record-form, lightning-record-edit-form, lightning-record-view-form
+Modules	lightning/uiRecordApi, lightning/uiObjectInfoApi, lightning/uiAppApi
+Utilities	Field schema imports, error handling, Lightning Message Service

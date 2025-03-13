@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="getObject method using LDS" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            <template if:true={ObjInfo.data}>
+                <p><strong>Object Label:</strong> {objectLabel}</p>
+            </template>
+            <template if:true={ObjInfo.error}>
+                <p>Error loading object info.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

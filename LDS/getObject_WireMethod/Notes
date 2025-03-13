@@ -1,0 +1,19 @@
+What is getObjectInfo in LWC?
+getObjectInfo is a wire adapter provided by Lightning Data Service (LDS) in Salesforce. It is used to fetch metadata information of a Salesforce object, such as:
+✔ Object Label (e.g., "Account")
+✔ Record Type IDs
+✔ Fields and their Data Types
+✔ Child Relationships
+
+Syntax of getObjectInfo
+
+import { LightningElement, wire } from 'lwc';
+import { getObjectInfo } from 'lightning/uiObjectInfoApi';
+import ACCOUNT_OBJECT from '@salesforce/schema/Account'; //this line allow avoiding typoerror.
+
+export default class Example extends LightningElement {
+    @wire(getObjectInfo, { objectApiName: ACCOUNT_OBJECT })
+    objectInfo;
+}
+📌 Here, objectInfo stores metadata details about the Account object.
+

@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Account Record Form" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            <!-- Record Form to view or edit an Account -->
+            <lightning-record-form record-id={recordId} object-api-name="Account" fields={fields} mode="edit" onsuccess={handleSuccess} onerror={handleError}></lightning-record-form>
+            <!-- Can be "view" or "edit" -->
+        </div>
+    </lightning-card>
+</template>

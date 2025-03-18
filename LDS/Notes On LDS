@@ -5,3 +5,17 @@ Functions	createRecord, updateRecord, deleteRecord, generateRecordInputForCreate
 Components	lightning-record-form, lightning-record-edit-form, lightning-record-view-form
 Modules	lightning/uiRecordApi, lightning/uiObjectInfoApi, lightning/uiAppApi
 Utilities	Field schema imports, error handling, Lightning Message Service
+
+
+When to Use Each Component:
+lightning-record-form:
+Use when you need a single form that can switch between view and edit modes.
+Example: A record detail page where users can view and edit records.
+
+lightning-record-edit-form:
+Use when you need a form specifically for creating or editing records.
+Example: A form to create a new account or edit an existing account.
+
+lightning-record-view-form:
+Use when you need a read-only form to display record details.
+Example: A summary page to display account information without editing capabilities.

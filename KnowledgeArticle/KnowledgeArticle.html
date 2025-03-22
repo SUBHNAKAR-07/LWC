@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Frequently Asked Questions" icon-name="utility:knowledge_base">
+        <template if:true={computedArticles.length}>
+            <ul class="article-list">
+                <template for:each={computedArticles} for:item="article">
+                    <li key={article.Id} class="article-item">
+                        <div class="question-container">
+                            <lightning-icon icon-name="utility:question" alternative-text="Question" size="small" class="icon"></lightning-icon>
+                           
+                            <lightning-formatted-rich-text class="question-text" value={article.Question__c}></lightning-formatted-rich-text>
+                           
+                            <lightning-button
+                                variant="base"
+                                label={article.buttonLabel}
+                                onclick={toggleAnswer}
+                                data-id={article.Id}
+                                class="toggle-button">
+                            </lightning-button>
+                        </div>
+                        <div class="answer-container hidden" data-id={article.Id}>
+                            <lightning-formatted-rich-text value={article.Answer__c}></lightning-formatted-rich-text>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </template>
+        <template if:false={computedArticles.length}>
+            <p class="slds-text-align_center slds-m-top_medium">No articles found.</p>
+        </template>
+    </lightning-card>
+</template>
+ 

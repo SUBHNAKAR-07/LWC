@@ -1,0 +1,14 @@
+<template>
+    <div class="container">
+        <h1 class="title">Franchise Management Tools</h1>
+        <div class="tile-container">
+            <template if:true={tiles}>
+                <template for:each={tiles} for:item="tile">
+                    <div key={tile.label} class="tile" onclick={handleTileClick} data-url={tile.url}>
+                        <p>{tile.label}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

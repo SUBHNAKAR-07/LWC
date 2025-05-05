@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Parmesan Stuffed Crust Launch">
+        <div class="slds-p-around_medium">
+            <template if:true={coupons}>
+                <template for:each={coupons} for:item="coupon" for:index="index">
+                    <div key={coupon.Id} class="slds-box slds-m-bottom_medium">
+                        <p><strong>{coupon.number}. {coupon.Name}</strong> - {coupon.Description__c}</p>
+
+                        <template if:true={coupon.Opt_in_Option_1__c}>
+                            <lightning-input type="checkbox"
+                                label={coupon.Opt_in_Option_1__c}
+                                data-index={index}
+                                data-option="Opt1"
+                                onchange={handleCheckboxChange}>
+                            </lightning-input>
+                        </template>
+
+                        <template if:true={coupon.Opt_in_Option_2__c}>
+                            <lightning-input type="checkbox"
+                                label={coupon.Opt_in_Option_2__c}
+                                data-index={index}
+                                data-option="Opt2"
+                                onchange={handleCheckboxChange}>
+                            </lightning-input>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- Submit Button -->
+                <div class="slds-m-top_medium">
+                    <lightning-button label="Submit" variant="brand" onclick={handleSubmit}></lightning-button>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Escalations - Infinite Scroll" icon-name="standard:case">
+        
+        <!-- Header showing record count -->
+        <div class="slds-p-horizontal_medium slds-p-vertical_small">
+            <lightning-layout horizontal-align="spread">
+                <lightning-layout-item>
+                    <p><strong>Total Records:</strong> {totalRecords}</p>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <p><strong>Records Loaded:</strong> {recordLoaded}</p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+
+        <!-- Scrollable Container -->
+        <div style="height: 400px; overflow-y: auto;">
+            <lightning-datatable
+                key-field="Id"
+                data={escalations}
+                columns={columns}
+                onloadmore={loadMoreData}
+                enable-infinite-loading
+                hide-checkbox-column
+                show-row-number-column>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

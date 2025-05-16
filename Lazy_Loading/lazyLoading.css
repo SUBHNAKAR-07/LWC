@@ -1,1 +1,4 @@
-
+.spinner-container {
+    position: relative;
+    height: 60px;
+}
